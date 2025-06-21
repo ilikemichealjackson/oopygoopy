@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oopy Goopy - Your Friendly Neighborhood Car Wash! 🚗✨</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@300;400;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            background-size: 300% 300%;
+            animation: rainbowShift 8s ease infinite;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes rainbowShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header::before {
+            content: '🌈✨🚗💦🌟';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            font-size: 2rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        header h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 0px #ff4757, 6px 6px 0px #2f3542;
+            transform: rotate(-2deg);
+            animation: wiggle 3s ease-in-out infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-2deg); }
+            25% { transform: rotate(1deg); }
+            75% { transform: rotate(-1deg); }
+        }
+
+        header p {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-cta {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            background-size: 300% 300%;
+            animation: rainbowShift 3s ease infinite;
+            color: white;
+            padding: 20px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.3rem;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 4px solid white;
+        }
+
+        .header-cta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Services Overview */
+        .services-overview {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            position: relative;
+        }
+
+        .services-overview::before {
+            content: '🎉🎊🌟💫⭐';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 2rem;
+            animation: sparkle 4s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            border: 3px solid #fff;
+            transform: rotate(-1deg);
+        }
+
+        .service-card:nth-child(even) {
+            transform: rotate(1deg);
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .service-card:nth-child(3) {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .service-card:nth-child(4) {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) rotate(0deg) scale(1.05);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.4);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .service-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        /* Side by Side Galleries */
+        .galleries-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+        }
+
+        .galleries-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-title {
+            text-align: center;
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: #ff6b6b;
+            text-shadow: 3px 3px 0px #fff, 6px 6px 0px #ff4757;
+            transform: rotate(-1deg);
+        }
+
+        .single-gallery {
+            position: relative;
+        }
+
+        .gallery-subtitle {
+            text-align: center;
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .before-title {
+            color: #ff6b6b;
+            text-shadow: 2px 2px 0px #fff;
+            transform: rotate(-2deg);
+        }
+
+        .after-title {
+            color: #4ecdc4;
+            text-shadow: 2px 2px 0px #fff;
+            transform: rotate(2deg);
+        }
+
+        .gallery-container {
+            position: relative;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.3);
+            overflow: hidden;
+            border: 5px solid #fff;
+            transform: rotate(-1deg);
+        }
+
+        .gallery-container:hover {
+            transform: rotate(0deg);
+        }
+
+        .gallery-wrapper {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .gallery-slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .gallery-slide.active {
+            display: block;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-slide:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: 3px solid white;
+            padding: 15px 18px;
+            cursor: pointer;
+            font-size: 1.8rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 10;
+            font-weight: bold;
+        }
+
+        .gallery-nav:hover {
+            transform: translateY(-50%) scale(1.2) rotate(360deg);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.5);
+        }
+
+        .gallery-prev {
+            left: 15px;
+        }
+
+        .gallery-next {
+            right: 15px;
+        }
+
+        .gallery-counter {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+            font-family: 'Fredoka One', cursive;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            position: relative;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 25px;
+            color: white;
+            border: 4px solid white;
+            transition: all 0.3s ease;
+            transform: rotate(-2deg);
+        }
+
+        .feature-item:nth-child(even) {
+            transform: rotate(2deg);
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px) rotate(0deg) scale(1.05);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .feature-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Meet the Crew */
+        .crew-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 4rem;
+            color: #ff6b6b;
+            text-shadow: 3px 3px 0px #fff, 6px 6px 0px #ff4757;
+            transform: rotate(-1deg);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '👥🌟';
+            position: absolute;
+            top: -20px;
+            right: -50px;
+            font-size: 2rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .crew-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            gap: 3rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.2);
+            transition: all 0.3s ease;
+            border: 4px solid #ff6b6b;
+            transform: rotate(-1deg);
+        }
+
+        .crew-member:nth-child(even) {
+            transform: rotate(1deg);
+            border-color: #4ecdc4;
+        }
+
+        .crew-member:hover {
+            transform: translateY(-10px) rotate(0deg);
+            box-shadow: 0 25px 50px rgba(255, 107, 107, 0.3);
+        }
+
+        .crew-member:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .crew-image {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .crew-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.3);
+            transition: transform 0.3s ease;
+            border: 4px solid white;
+        }
+
+        .crew-image img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .crew-info {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .crew-name {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            color: #ff6b6b;
+            margin-bottom: 0.5rem;
+        }
+
+        .crew-role {
+            color: #4ecdc4;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .crew-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 2.5rem;
+            border-radius: 25px;
+            color: white;
+            border: 4px solid white;
+            transition: all 0.3s ease;
+            transform: rotate(-1deg);
+        }
+
+        .testimonial-card:nth-child(even) {
+            transform: rotate(1deg);
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .testimonial-card:nth-child(3) {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px) rotate(0deg) scale(1.02);
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .testimonial-author {
+            font-family: 'Fredoka One', cursive;
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+
+        .testimonial-location {
+            opacity: 0.9;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Served Houses */
+        .served-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+        }
+
+        .served-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .served-item {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 4px solid #4ecdc4;
+            transform: rotate(-1deg);
+        }
+
+        .served-item:nth-child(even) {
+            transform: rotate(1deg);
+            border-color: #ff6b6b;
+        }
+
+        .served-item::before {
+            content: '✨';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .served-item:hover {
+            transform: translateY(-10px) rotate(0deg);
+            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.3);
+        }
+
+        .served-address {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.4rem;
+            color: #ff6b6b;
+            margin-bottom: 0.8rem;
+        }
+
+        .served-service {
+            color: #4ecdc4;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .served-date {
+            color: #666;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            background-size: 300% 300%;
+            animation: rainbowShift 8s ease infinite;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.2);
+            padding: 2.5rem;
+            border-radius: 25px;
+            border: 4px solid white;
+            transition: all 0.3s ease;
+            transform: rotate(-2deg);
+        }
+
+        .contact-item:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-10px) rotate(0deg) scale(1.05);
+            background: rgba(255,255,255,0.3);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .contact-text {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .contact-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+
+            .galleries-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .crew-member {
+                flex-direction: column !important;
+                text-align: center;
+            }
+
+            .crew-member:nth-child(even) {
+                flex-direction: column !important;
+            }
+
+            .gallery-nav {
+                padding: 10px 12px;
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .gallery-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Fun floating elements */
+        .floating-emoji {
+            position: fixed;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 1000;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating emojis -->
+    <div class="floating-emoji" style="top: 10%; left: 5%; animation-delay: 0s;">🚗</div>
+    <div class="floating-emoji" style="top: 20%; right: 10%; animation-delay: 1s;">💦</div>
+    <div class="floating-emoji" style="top: 60%; left: 8%; animation-delay: 2s;">✨</div>
+    <div class="floating-emoji" style="top: 80%; right: 5%; animation-delay: 3s;">🌟</div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Oopy Goopy! 🌈</h1>
+            <p>The Foam is OUR Goopy Signature! ✨🚗💫</p>
+            <a href="#contact" class="header-cta">Let's Get Foamy!! 🧽</a>
+        </div>
+    </header>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <h2 class="section-title">What We Do Best! 🎯</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🚗💨</span>
+                    <h3 class="service-title">Super Car Wash!</h3>
+                    <p class="service-description">We'll make your car so shiny, you'll need sunglasses! Inside and out, we've got you covered! 😎</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🪟✨</span>
+                    <h3 class="service-title">Crystal Clear Windows!</h3>
+                    <p class="service-description">Say Goodbye to All the Water Spots and Grime on Your Car Windows! 🤩</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🌟🔥</span>
+                    <h3 class="service-title">Detail Magic!</h3>
+                    <p class="service-description">We work our magic to make your ride look better than the day you bought it! ✨</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side by Side Galleries -->
+    <section class="galleries-section">
+        <div class="container">
+            <h2 class="gallery-title">Check Out This Transformation! 🎭</h2>
+            <div class="galleries-container">
+                <!-- Before Gallery -->
+                <div class="single-gallery">
+                    <h3 class="gallery-subtitle before-title">Yikes! Before... 😬</h3>
+                    <div class="gallery-container">
+                        <div class="gallery-wrapper">
+                            <div class="gallery-slide active">
+                                <img src="../New folder (16)/Before/whiteblue1.jpg" alt="Dirty car - needs help!">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../New folder (16)/before/blackblind.jpg" alt="Grimy blind spot windows - can't see through!">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../New folder (16)/before/Whiteblue2.jpg" alt="Muddy mess - oh no!">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../New folder (16)/before/Whiteleft.jpg" alt="Stained and sad">
+                            </div>
+                        </div>
+                        <button class="gallery-nav gallery-prev" onclick="changeSlide('before', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeSlide('before', 1)">›</button>
+                        <div class="gallery-counter">
+                            <span id="before-counter">1 / 4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- After Gallery -->
+                <div class="single-gallery">
+                    <h3 class="gallery-subtitle after-title">WOW! After! 🤩</h3>
+                    <div class="gallery-container">
+                        <div class="gallery-wrapper">
+                            <div class="gallery-slide active">
+                                <img src="../New folder (16)/After/1.jpg" alt="Sparkling clean car!">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../New folder (16)/After/2.jpg" alt="Crystal clear windows!">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../New folder (16)/After/3.jpg" alt="Pristine and perfect!">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../New folder (16)/After/4.jpg" alt="Absolutely gorgeous!">
+                            </div>
+                        </div>
+                        <button class="gallery-nav gallery-prev" onclick="changeSlide('after', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeSlide('after', 1)">›</button>
+                        <div class="gallery-counter">
+                            <span id="after-counter">1 / 4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Why We're Awesome! 🌟</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">⚡🏃‍♂️</span>
+                    <h3 class="feature-title">Super Fast!</h3>
+                    <p>We're quick like lightning but thorough like... really thorough people! ⚡</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🌿🌍</span>
+                    <h3 class="feature-title">Earth-Friendly!</h3>
+                    <p>We love Mother Earth! All our stuff is safe and green! 🌱</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">😊💯</span>
+                    <h3 class="feature-title">Happy Guarantee!</h3>
+                    <p>Not happy? We'll make it right or your money back! Promise! 🤝</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📱🚚</span>
+                    <h3 class="feature-title">Super Easy!</h3>
+                    <p>Book online, we come to you! Easy peasy lemon squeezy! 🍋</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Crew -->
+    <section class="crew-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Awesome Team!</h2>
+            
+            <div class="crew-member">
+                <div class="crew-image">
+                    <img src="../New folder (16)/The Team/Ian.jpg" alt="Mike - The Boss Man!">
+                </div>
+                <div class="crew-info">
+                    <div class="crew-name">Ian (Window Specialist) 🪟</div>
+                    <div class="crew-role">Window Wizard</div>
+                    <div class="crew-description">
+                        A true squeegee specialist, always having an eye out for the most cleanest crispiest windows, all done by him. He even made the website you are on right now! 🐦✨
+                    </div>
+                </div>
+            </div>
+
+            <div class="crew-member">
+                <div class="crew-image">
+                    <img src="../New folder (16)/The Team/Cruz.jpg" alt="Sarah - Window Wonder!">
+                </div>
+                <div class="crew-info">
+                    <div class="crew-name">Cruz (Wax and Wash Specialist) 🚗</div>
+                    <div class="crew-role">Window Warrior</div>
+                    <div class="crew-description">
+                        Cars so bright and shiny, they put sunspots in your eye, it had to have been done by Cruz. not a smudge gets past a rag in his hands!</div>
+                </div>
+            </div>
+
+            <div class="crew-member">
+                <div class="crew-image">
+                    <img src="../New folder (16)/The Team/Wes.jpg" alt="David - Detail Dude!">
+                </div>
+                <div class="crew-info">
+                    <div class="crew-name">Wes (Deail Specialist)</div>
+                    <div class="crew-role">Perfectionist Extraordinaire</div>
+                    <div class="crew-description">
+Lifetimes of experience at only 12, any dark dirt hiding in your rubber or leather gets picked up by his eye from miles away!                    </div>
+                </div>
+            </div>
+
+            <div class="crew-member">
+                <div class="crew-image">
+                    <img src="../New folder (16)/The Team/Tanner.jpg" alt="No Image Found">
+                </div>
+                <div class="crew-info">
+                    <div class="crew-name">Tanner (Interior Specialist)</div>
+                    <div class="crew-role">Valuable Vaccumer Officer</div>
+                    <div class="crew-description">
+                       Any dust in the air of your car gets swepts up, any stain can be taken out if the interior goat Tanner is on the job!                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What People Are Saying! 💬</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"OMG! You guys did an AMAZING job!" (5$ tip, one car)</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Come back in another 2 weeks if you can boys!" (2 Cars, 10$ Tip)</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Damn, this car was way better than expected, it looks CRAZY!" (15$ Tip, one car)</p>
+                    <div class="testimonial-author">Cruzs Dad 🚗</div>                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Served Houses -->
+    <section class="served-section">
+        <div class="container">
+            <h2 class="section-title">Look Where We've Been! 📍</h2>
+            <div class="served-grid">
+                <div class="served-item">
+                    <div class="served-address">3802 Canon Street, Point Loma 🏠</div>
+                    <div class="served-service">2 Full Cars Makeover Magic!</div>
+                    <div class="served-date">Made sparkly: Jun 19, 2025</div>
+                </div>
+                <div class="served-item">
+                    <div class="served-address">3833 Del Mar Avenue, Point Loma 🌊</div>
+                    <div class="served-service">One Car Clean</div>
+                    <div class="served-date">Crystal-fied: Jun 19, 2025</div>
+                </div>
+                <div class="served-item">
+                    <div class="served-address">3822 Canon Street, Point Loma ⛰️</div>
+                    <div class="served-service">Ultimate Exterior Makeover!</div>
+                    <div class="served-date">Perfected: Jun 19, 2025</div>
+                </div>
+                <div class="served-item">
+                    <div class="served-address">962 Amiford Drive, Point Loma 🪟</div>
+                    <div class="served-service">Home Window Happiness, And Dual Car Restoration!</div>
+                    <div class="served-date">Brightened: Jun 17, 2025</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Chat! We're Super Friendly! 📞</h2>
+            <p style="font-size: 1.4rem; margin-bottom: 2rem; font-weight: 700;">Ready to make your stuff SPARKLE? Hit us up! 🌟</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div class="contact-text">(858) 910 2397</div>
+                    <div class="contact-label">Call or text us anytime! Just Say or Type "Wash" when Texting to us or when Calling!</div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <div class="contact-text">oopygoopywash
+@gmail.com
+</div>
+                    <div class="contact-label">Email us for quotes!</div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🚚</span>
+                    <div class="contact-text">We Come To You!</div>
+                    <div class="contact-label">Mobile service In Point Loma Near OB!</div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🕒</span>
+                    <div class="contact-text">Every Single Day!</div>
+                    <div class="contact-label"> Around 12 AM - 6 PM (We love our job!)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Gallery functionality
+        let currentSlide = {
+            before: 0,
+            after: 0
+        };
+
+        const slideCount = {
+            before: 4,
+            after: 4
+        };
+
+        function changeSlide(gallery, direction) {
+            const galleryContainer = document.querySelector(`.single-gallery:${gallery === 'before' ? 'first-child' : 'last-child'}`);
+            const slides = galleryContainer.querySelectorAll('.gallery-slide');
+            const counter = document.getElementById(`${gallery}-counter`);
+            
+            slides[currentSlide[gallery]].classList.remove('active');
+            
+            currentSlide[gallery] += direction;
+            
+            if (currentSlide[gallery] >= slideCount[gallery]) {
+                currentSlide[gallery] = 0;
+            } else if (currentSlide[gallery] < 0) {
+                currentSlide[gallery] = slideCount[gallery] - 1;
+            }
+            
+            slides[currentSlide[gallery]].classList.add('active');
+            counter.textContent = `${currentSlide[gallery] + 1} / ${slideCount[gallery]}`;
+        }
+
+        // Auto-advance galleries
+        setInterval(() => {
+            changeSlide('before', 1);
+        }, 4000);
+
+        setTimeout(() => {
+            setInterval(() => {
+                changeSlide('after', 1);
+            }, 4000);
+        }, 2000);
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fun click effects
+        document.addEventListener('click', function(e) {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#feca57', '#ff9ff3'];
+            const emojis = ['✨', '💫', '🌟', '💦', '🎉'];
+            
+            for(let i = 0; i < 3; i++) {
+                const spark = document.createElement('div');
+                spark.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                spark.style.position = 'fixed';
+                spark.style.left = (e.clientX - 10 + Math.random() * 20) + 'px';
+                spark.style.top = (e.clientY - 10 + Math.random() * 20) + 'px';
+                spark.style.fontSize = '1.5rem';
+                spark.style.pointerEvents = 'none';
+                spark.style.zIndex = '9999';
+                spark.style.animation = 'sparkleUp 1s ease-out forwards';
+                
+                document.body.appendChild(spark);
+                
+                setTimeout(() => {
+                    spark.remove();
+                }, 1000);
+            }
+        });
+
+        // Add sparkle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes sparkleUp {
+                0% { opacity: 1; transform: translateY(0) scale(1); }
+                100% { opacity: 0; transform: translateY(-50px) scale(0.5); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
